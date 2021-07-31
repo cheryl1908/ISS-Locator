@@ -32,7 +32,6 @@ export default class ISSLocator extends React.Component{
         })
     }
     render(){
-        console.log(this.state.location);
         if(Object.keys(this.state.location).length===0){
             return(
                 <View style={{flex:1, justifyContent:'center', alignItems:'center'}}>

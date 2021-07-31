@@ -27,7 +27,7 @@ export default class Meteors extends React.Component{
            bgImg=require("../assets/meteor_bg1.png");
            speed=require("../assets/meteor_speed3.gif");
            size=100;
-       }else if(threat_score<=75){
+       }else if(meteor.threat_score<=75){
         bgImg=require("../assets/meteor_bg2.png");
         speed=require("../assets/meteor_speed3.gif");
         size=150;
@@ -77,8 +77,9 @@ export default class Meteors extends React.Component{
                 return(b.threat_score-a.threat_score);
             })
             meteors=meteors.slice(0,5);
+            console.log(meteors)
             return(
-                <View style={StyleSheet.container}>
+                <View style={styles.container}>
                     <SafeAreaView style={styles.androidSafeArea}/>
                     <FlatList keyExtractor={(item,index)=>index.toString()} data={meteors} renderItem={this.renderItem} horizontal={true}>
 
